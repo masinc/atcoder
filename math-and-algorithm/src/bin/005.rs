@@ -1,3 +1,12 @@
+use proconio::input;
+
 fn main() {
-    todo!();
+    input! {
+        n: usize,
+        a: [usize; n]
+    }
+
+    let sum: usize = a.into_iter().sum();
+
+    println!("{}", sum % 100)
 }
