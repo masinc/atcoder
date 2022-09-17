@@ -1,5 +1,5 @@
 use proconio::input;
-use std::collections::HashSet;
+use rustc_hash::FxHashSet;
 
 fn main() {
     input! {
@@ -7,7 +7,7 @@ fn main() {
         s: usize,
         a: [usize; n]
     }
-    let mut v = HashSet::new();
+    let mut v = FxHashSet::default();
     v.insert(0);
 
     for a in a {
