@@ -1,5 +1,5 @@
-use itertools::Itertools;
 use proconio::input;
+use std::collections::HashSet;
 
 fn main() {
     input! {
@@ -7,18 +7,13 @@ fn main() {
         s: usize,
         a: [usize; n]
     }
+    let mut v = HashSet::new();
+    v.insert(0);
 
-    let mut r = false;
-
-    for i in 1..n {
-        r = a
-            .iter()
-            .permutations(i)
-            .any(|x| x.into_iter().sum::<usize>() == s);
-        if r {
-            break;
-        }
+    for a in a {
+        v.extend(v.iter().map(|x| x + a).collect::<Vec<_>>());
     }
 
+    let r = v.contains(&s);
     println!("{}", if r { "Yes" } else { "No" })
 }
