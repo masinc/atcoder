@@ -26,6 +26,16 @@ cases:
       0
       0
       0
+  - name: custom1
+    in: |
+      3
+      2
+      0 3
+      0 2
+    out: |
+      2
+      2
+      1
 
 extend:
   - type: Text
